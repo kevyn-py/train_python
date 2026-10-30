@@ -5,23 +5,39 @@ carros = [{'nome' : 'mustang', 'marca' : 'Ford', 'ano' : '1978', 'ativo' : False
           {'nome' : 'Corsa', 'marca': 'Chevrolet', 'ano' : '1998', 'ativo' : False}]
 
 def exibir_nome_do_programa():
+    ''' Exibir o título do aplicativo na tela '''
     # Para exibir uma informção para usuário, utilizamos a função print().
     print("Táxi Express\n")
 
 def exibir_opcoes():
+    ''' Exibir as funcionalidades do aplicativo no menu principal'''
     print("1. Cadastrar carro")
     print("2. Listar carros")
     print("3. Desativar/Ativar carro")
     print("4. Sair")
 
 def finalizar_app():
+    ''' Exibir mensagem de finalização do aplicativo'''
     exibir_subtitulo('Finalizando o app')
 
 def opção_invalida():
+    '''
+    Exibir uma mensagem de opção inválida e retorna para menu principal
+
+    Outputs:
+    - retorna ao menu principal
+    
+    '''
     print("\nOpção Inválida")
     voltar_menu_principal()
 
 def exibir_subtitulo(texto):
+    '''
+    Exibindo um subtítulo estilizado na tela
+
+    Inputs:
+    - texto: str - O texto substítulo
+    '''
     os.system('cls')
     linha = '-'* len(texto)
     print(linha)
@@ -30,6 +46,17 @@ def exibir_subtitulo(texto):
     print()
 
 def cadastrar_novo_carro():
+    '''
+    Uma função responsável por cadastrar um novo carro
+
+    Inputs:
+    -Nome do carro
+    -Marca do carro
+    -Ano do carro
+
+    Outputs:
+    -Adiciona um novo carro a lista de carros
+    '''
     exibir_subtitulo('Cadastro de novos carros')
 
     nome_carro = input('Digite o nome do carro que deseja cadastrar: ')
@@ -43,6 +70,12 @@ def cadastrar_novo_carro():
     voltar_menu_principal()
 
 def listar_carros():
+    '''
+    Uma função para listar todos os carros presenta na lista
+
+    Outputs:
+    - Exibi a lista de carros na tela
+    '''
     exibir_subtitulo('Listando todos os carros')
 
     print(f'{'Nome do Carro'.ljust(18)} | {'Marca'.ljust(15)} | {'Ano'.ljust(15)} | Status')
@@ -56,10 +89,23 @@ def listar_carros():
     voltar_menu_principal()
 
 def voltar_menu_principal():
+    '''
+    Solicita uma tecla para voltar para menu principal
+
+    Outputs:
+    -Retorna ao menu principal
+    '''
     input("\nDigite uma tecla para voltar no menu: ")
     main()
 
 def ativando_carro():
+    '''
+    Uma função para Ativar/Desativar o status de um carro
+
+    Outputs:
+    -Exibe uma mensagem indicando o sucesso da operação
+
+    '''
     exibir_subtitulo('Alterando o status do carro')
 
     nome_carro = input('Digite o nome do carro que deseja alterar o status: ')
@@ -77,6 +123,12 @@ def ativando_carro():
     voltar_menu_principal()
 
 def escolher_opcao_match():
+    '''
+    Solicita e executa a opção escolhida pelo usuário
+
+    Outputs: 
+    - Executa a opção escolhida pelo usuário
+    '''
     #Utilizando o try e except, para tratamento de erro, como o usuario pode digitar uma string e o programa está esperando uma entrada Int
 
     try:
@@ -99,6 +151,7 @@ def escolher_opcao_match():
 
 
 def main():
+    ''' Função principal que inicia o programa '''
     os.system('cls')
     exibir_nome_do_programa()
     exibir_opcoes()
